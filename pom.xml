@@ -47,7 +47,7 @@
     </dependencies>
 
     <build>
-        <finalName>ServletExecute</finalName>
+        <finalName>ParcelLockerWeb</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>

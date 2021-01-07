@@ -1,3 +1,5 @@
+package parcellocker;
+
 import lombok.Getter;
 import lombok.ToString;
 

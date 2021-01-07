@@ -1,34 +1,41 @@
-import lombok.Getter;
+package parcellocker;
 
+import lombok.Getter;
+import lombok.ToString;
+
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Getter
+@ToString
 public class ParcelLocker {
 
     private static List<Parcel> parcelList;
-
+    private PrintWriter printWriter;
     public static List<Parcel> getParcelList() {
         return parcelList;
     }
 
     public ParcelLocker() {
+        printWriter=new PrintWriter(System.out);
         parcelList = new ArrayList<>();
     }
 
     public boolean sendParcel( int sizeX, int sizeY, int sizeZ, long phoneNumber, String email ) {
         Parcel parcel = null;
         if (!(checkDimentions(sizeX, sizeY, sizeZ))) {
-            System.out.println("Paczka za duża");
+            printWriter.println("Paczka za duża");
         } else if (parcelList.size() > 100) {
-            System.out.println("Nie mogę nadać paczki, paczkomat pełny");
+            printWriter.println("Nie mogę nadać paczki, paczkomat pełny");
         } else if (!(checkEmail(email))) {
-            System.out.println("Nieprawidłowy email");
+            printWriter.println("Nieprawidłowy email");
         } else {
             parcel = new Parcel(sizeX, sizeY, sizeZ, phoneNumber, email);
             parcelList.add(parcel);
+            printWriter.println( "Wysłałem paczkę");
             return true;
         }
         return false;
