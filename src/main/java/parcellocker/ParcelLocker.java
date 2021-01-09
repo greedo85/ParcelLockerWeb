@@ -3,6 +3,7 @@ package parcellocker;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.io.PipedReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class ParcelLocker {
     public static List<Parcel> getParcelList() {
         return parcelList;
     }
-
+    private Status status;
     public ParcelLocker() {
         printWriter=new PrintWriter(System.out);
         parcelList = new ArrayList<>();
@@ -27,15 +28,15 @@ public class ParcelLocker {
     public boolean sendParcel( int sizeX, int sizeY, int sizeZ, long phoneNumber, String email ) {
         Parcel parcel = null;
         if (!(checkDimentions(sizeX, sizeY, sizeZ))) {
-            printWriter.println("Paczka za duża");
+            status=Status.PACZKA_ZA_DUZA;
         } else if (parcelList.size() > 100) {
-            printWriter.println("Nie mogę nadać paczki, paczkomat pełny");
+           status=Status.PACZKOMAT_PELNY;
         } else if (!(checkEmail(email))) {
-            printWriter.println("Nieprawidłowy email");
+            status=Status.BLEDNY_EMAIL;
         } else {
             parcel = new Parcel(sizeX, sizeY, sizeZ, phoneNumber, email);
             parcelList.add(parcel);
-            printWriter.println( "Wysłałem paczkę");
+            status=Status.NADANA;
             return true;
         }
         return false;

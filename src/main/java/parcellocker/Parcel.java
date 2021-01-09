@@ -11,8 +11,10 @@ public class Parcel {
     private int sizeY;
     private int sizeZ;
     private String receiveCode = "";
+    /*--------------------------------*/
     private String email;
     private long phoneNumber;
+    /*--------------------------------*/
     static int iterator =1;
     private int id;
 

@@ -22,7 +22,8 @@ public class SendParcel extends HttpServlet {
         int sizeZ = Integer.parseInt(req.getParameter("sizeZ"));
         String email = req.getParameter("email");
         long phoneNumber = Long.parseLong(req.getParameter("phonenumber"));
-        printWriter.println(parcelLocker.sendParcel(sizeX,sizeY,sizeZ,phoneNumber,email));
+        parcelLocker.sendParcel(sizeX,sizeY,sizeZ,phoneNumber,email);
+        printWriter.println(parcelLocker.getStatus());
         printWriter.println(parcelLocker.getParcelList());
     }
 }
