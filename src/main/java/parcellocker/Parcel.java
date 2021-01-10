@@ -1,29 +1,27 @@
 package parcellocker;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @ToString
 @Getter
+@Setter
 public class Parcel {
 
     private int sizeX;
     private int sizeY;
     private int sizeZ;
-    private String receiveCode = "";
-    /*--------------------------------*/
-    private String email;
-    private long phoneNumber;
-    /*--------------------------------*/
+    private String receiveCode="";
+    private Sender sender;
+    private ParcelStatus parcelStatus;
     static int iterator =1;
     private int id;
 
-    public Parcel( int sizeX, int sizeY, int sizeZ, long phoneNumber, String email ) {
+    public Parcel( int sizeX, int sizeY, int sizeZ) {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
         this.sizeZ = sizeZ;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
         receiveCode = generateCode();
         id = iterator++;
     }
