@@ -1,0 +1,82 @@
+body{
+	background-color: lightgray;
+	color: black;
+	font-family: arial;
+	font-size: medium;	
+	background-image: url("img/ekran.png");
+	background-repeat: no-repeat;
+ background-position: center;
+ position:middle;
+	
+
+}
+
+
+p{
+text-align: justify;
+}
+
+a:hover{
+color: lightcoral;
+
+}
+.center {
+  margin: auto;
+  width: 10%;
+  
+  padding: 100px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  align: center;
+  display:inline-block;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+  align: center;
+}
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; }
+	
+
+.container .button {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  text-align: center;
+}
+.button
+{
+	background-color: #555;
+	 border: none;
+  color: white;
+  padding: 5px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+	
+
+.container .button:hover {
+  background-color: black;
+}
