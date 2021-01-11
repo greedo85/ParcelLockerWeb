@@ -1,5 +1,5 @@
 # Paczkomat
-ParcelLocker - projekt symuluje nadawanie i odbieranie paczek
+parcellocker.ParcelLocker - projekt symuluje nadawanie i odbieranie paczek
 
 # Opis
 Projekt jest aplikacją webową wykorzystującą servlety
