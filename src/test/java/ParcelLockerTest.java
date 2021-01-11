@@ -5,7 +5,6 @@ import parcellocker.ParcelStatus;
 import parcellocker.Sender;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 public class ParcelLockerTest {
 
     @Test

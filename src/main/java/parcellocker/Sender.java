@@ -4,7 +4,6 @@ import lombok.ToString;
 
 @ToString
 public class Sender {
-
     private String name;
     private String surname;
     private String email;

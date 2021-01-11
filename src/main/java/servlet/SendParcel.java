@@ -17,7 +17,7 @@ public class SendParcel extends HttpServlet {
 
     ParcelLocker parcelLocker=new ParcelLocker();
     @Override
-    protected void doPost( HttpServletRequest req, HttpServletResponse resp ) throws ServletException, IOException {
+    protected void doPost( HttpServletRequest req, HttpServletResponse resp ) throws  IOException {
         PrintWriter printWriter = resp.getWriter();
         int sizeX = Integer.parseInt(req.getParameter("sizeX"));
         int sizeY = Integer.parseInt(req.getParameter("sizeY"));
