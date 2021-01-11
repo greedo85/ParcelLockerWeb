@@ -1,5 +1,8 @@
 package parcellocker;
 
+import lombok.ToString;
+
+@ToString
 public class Sender {
 
     private String name;
